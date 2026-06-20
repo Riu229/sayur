@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NIK SAYUR</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIK SAYUR - Sistem Stok & Harga Sayuran</title>
+
+    <meta name="description" content="Website sederhana untuk mengelola harga, stok, dan data sayuran. Bisa digunakan admin untuk CRUD data sayur.">
+
+    <meta name="keywords" content="sayur, stok sayur, harga sayur, manajemen data, usaha sayur">
+
+    <meta name="author" content="NIK SAYUR">
+    <meta name="google-site-verification" content="xxxxx" />
+</head>
+
+<body>
+
+    <h1>🥬 NIK SAYUR</h1>
+    <p>Daftar harga dan stok sayuran</p>
+
+    <!-- 🔐 LOGIN -->
+    <div id="loginBox">
+    <h3>Login Admin</h3>
+
+    <input type="password" id="password" placeholder="Password admin">
+
+    <!-- 👁 SHOW PASSWORD -->
+    <label>
+        <input type="checkbox" onclick="togglePassword()">
+        Tampilkan Password
+    </label>
+
+    <br>
+
+    <button onclick="login()">Login</button>
+    </div>
+
+    <!-- 🚪 LOGOUT -->
+     <h3>Logout Admin</h3>
+    <button id="tombolLogout" onclick="logout()" style="display:none;">
+        Logout
+    </button>
+
+    <!-- 🔑 GANTI SANDI (ADMIN ONLY) -->
+    <div id="gantiSandiBox" style="display:none; margin-top:10px;">
+        <h4>Ganti Sandi Admin</h4>
+        <input type="password" id="passBaru" placeholder="Password baru">
+        <button onclick="gantiPassword()">Ganti Sandi</button>
+    </div>
+
+    <hr>
+
+    <!-- 🔍 SEARCH -->
+    <input 
+        type="text" 
+        id="cariSayur"
+        placeholder="Cari sayur..."
+        onkeyup="cariSayur()"
+    >
+
+    <!-- 📊 TABLE -->
+    <table id="tabelSayur"></table>
+
+    <!-- ➕ TAMBAH DATA (ADMIN ONLY) -->
+    <button id="tombolAdmin" onclick="tambahSayur()" style="display:none;">
+        + Tambah Data
+    </button>
+
+    <!-- 💰 TOTAL -->
+    <h3 id="totalHarga">Total: Rp 0</h3>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
